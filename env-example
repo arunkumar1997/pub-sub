@@ -1,0 +1,5 @@
+DB_HOST=localhost
+DB_PORT=3303
+DB_USER=cpp
+DB_PASSWORD=cpp1234
+DB_NAME=cpp
