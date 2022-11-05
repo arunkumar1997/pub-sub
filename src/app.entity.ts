@@ -5,8 +5,8 @@ import {
   CreateDateColumn,
 } from 'typeorm';
 
-@Entity('ws_entity')
-export class WsEntity {
+@Entity('entity')
+export class AppEntity {
   @PrimaryGeneratedColumn()
   id: number;
 

@@ -3,10 +3,7 @@ import { ConfigModule } from '@nestjs/config';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { WsModule } from './ws/ws.module';
-import { WsService } from './ws/ws.service';
-import { WsEntity } from './ws/entity/ws.entity';
-import { WsGateway } from './ws/ws.gateway';
+import { AppEntity } from './app.entity';
 
 @Module({
   imports: [
@@ -23,10 +20,9 @@ import { WsGateway } from './ws/ws.gateway';
       synchronize: true,
       autoLoadEntities: true,
     }),
-    TypeOrmModule.forFeature([WsEntity]),
-    WsModule,
+    TypeOrmModule.forFeature([AppEntity]),
   ],
   controllers: [AppController],
-  providers: [AppService, WsService, WsGateway],
+  providers: [AppService],
 })
 export class AppModule {}
