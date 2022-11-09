@@ -9,18 +9,22 @@
     ```sh
    yarn install
    ```
+3. Update env file
+    ```sh
+    cp env-example .env
+    ```
 
-3. Build the app
+4. Build the app
     ```sh
     yarn build
     ```
 
-4. start the database
+5. start the database
     ```sh
     yarn start:db
     ```
 
-5. start the app 
+6. start the app
     ```sh
     yarn start:prod
     ```
