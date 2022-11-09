@@ -4,10 +4,10 @@ services:
     image: mysql
     restart: always
     environment:
-      - MYSQL_USER=${DB_USER}
-      - MYSQL_PASSWORD=${DB_PASSWORD}
-      - MYSQL_DATABASE=${DB_NAME}
-      - MYSQL_ROOT_PASSWORD=${DB_PASSWORD}
+      - MYSQL_USER=${DB_USER:-cpp}
+      - MYSQL_PASSWORD=${DB_PASSWORD:-cpp1234}
+      - MYSQL_DATABASE=${DB_NAME:-cpp}
+      - MYSQL_ROOT_PASSWORD=${DB_PASSWORD:-cpp1234}
     ports:
       - '127.0.0.1:${DB_PORT:-3033}:3306'
     volumes:
