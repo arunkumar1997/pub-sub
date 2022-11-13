@@ -1,4 +1,7 @@
-# Pub Sub app
+# Pubsub app
+
+This app will let you post the data to the backend server using POST rerquest and saves it into mysql database.
+After saving it backend server will publish the data to the subscribers using websocket
 
 ## [Demo](https://www.loom.com/share/e0ca406da15f4ef896b60623a2934ab7)
 
