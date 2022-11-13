@@ -47,7 +47,7 @@ example payload
 }
 ```
 
-### Emmiting event using socket.io
+### Emmiting SUBSCRIBE event using socket.io
 
 ```javascript
 const socket = io('http://localhost:3000');
@@ -59,12 +59,27 @@ const payload = {
 socket.emit('SUBSCRIBE', payload);
 ```
 
-## Publishing Data to the server
+
+## Capturing publish action from the server
+
+```javascript
+
+const socket = io('http://localhost:3000');
+
+socket.on("RECORD_CREATED", (data) => {
+    console.log(data)
+})
+```
+
+
+## Publishing data to the server
 
 Make a POST request to `/publish` to save the data in db and publish the data to subscribers.
 
 Body Params
+
 `channel`: The channel name for the server to publish the data.
+
 `data`: Data that needs to be published for subscribers.
 
 Below payload will publish the payload data for `example-channel` listners with the event `RECORD_CREATED`
