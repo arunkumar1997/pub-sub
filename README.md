@@ -28,3 +28,47 @@
     ```sh
     yarn start:prod
     ```
+
+
+## Subscribe to specific event.
+
+Send `SUBSCRIBE` event to websocket with channel name.
+
+example payload
+```json
+{
+    "channel": "example-channel"
+}
+```
+
+### Emmiting event using socket.io
+```javascript
+const socket = io("http://localhost:3000");
+
+const payload = {
+    "channel": "example-channel"
+    }
+
+socket.emit("SUBSCRIBE", payload);
+```
+
+
+## Publishing Data to the server 
+
+Make a POST request to `/publish` to save the data in db and publish the data to subscribers.
+
+Body Params
+`channel`: The channel name for the server to publish the data. 
+`data`: Data that needs to be published for subscribers.
+
+Below payload will publish the `data` field for `example-channel` listners with the event `RECORD_CREATED`
+```json
+{
+    "channel": "example-channel",
+    "data": {
+        "name": "User 1",
+        "email": "user1@example.com"
+    }
+}
+```
+
