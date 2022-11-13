@@ -50,10 +50,12 @@ export class AppService {
     return this.appEntityRepository.save(entity);
   }
 
+//   TODO
   findMany(query: object): Promise<AppEntity[]> {
     return this.appEntityRepository.find(query);
   }
 
+// TODO
   findOne(id: number): Promise<AppEntity> {
     return this.appEntityRepository.findOne({
       where: { id },
